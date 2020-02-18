@@ -5,7 +5,9 @@
 - [Get-ChildItemColor](https://github.com/joonro/Get-ChildItemColor)
   - Makes `ls` in powershell behave more similar to unix `ls`
 - [PostGit v1.X](https://github.com/dahlbyk/posh-git)
-  - ![Example Prompt](https://github.com/gblock0/powershell/screenshots/gitPrmpt)
+
+![Example Prompt](https://raw.githubusercontent.com/gblock0/powershell/master/screenshots/poshgitPrompt.png)
+
 - [PSReadLine](https://github.com/PowerShell/PSReadLine)
   > A bash inspired readline implementation for PowerShell
   >
