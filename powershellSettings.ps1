@@ -1,5 +1,18 @@
 ﻿# Get Git niceness in PS
 Import-Module -Name posh-git
+Import-Module -Name oh-my-posh
+Set-Theme Paradox
+
+# **** oh-my-posh prompt Settings Start *****
+$ThemeSettings.PromptSymbols.PromptIndicator = [char]::ConvertFromUtf32(0xE285)
+$ThemeSettings.PromptSymbols.FailedCommandSymbol = [char]::ConvertFromUtf32(0xF00D)
+$ThemeSettings.PromptSymbols.UNCSymbol = "§"
+$ThemeSettings.GitSymbols.LocalWorkingStatusSymbol = "☢"
+$ThemeSettings.GitSymbols.LocalDefaultStatusSymbol = "✔"
+$ThemeSettings.GitSymbols.BranchIdenticalStatusToSymbol = ""
+$ThemeSettings.GitSymbols.BranchAheadStatusSymbol = "☁"
+$ThemeSettings.GitSymbols.BranchUntrackedSymbol = [char]::ConvertFromUtf32(0xE36E)
+# **** oh-my-posh prompt Settings End *****
 
 # Make ls work more like unix ls
 Import-Module Get-ChildItemColor
@@ -11,27 +24,9 @@ Set-Alias g git
 
 # **** PoshGit Prompt Settings Start *****
 
-# Show time before Path and VCS info
-$GitPromptSettings.DefaultPromptPrefix.Text = '$(Get-Date -f "MM-dd HH:mm:ss") '
-$GitPromptSettings.DefaultPromptPrefix.ForegroundColor = [ConsoleColor]::Magenta
-$GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n'
-
-# Use a green checkmark to show that the local repo isn't dirty
-$GitPromptSettings.LocalDefaultStatusSymbol.Text = "✔"
-$GitPromptSettings.LocalDefaultStatusSymbol.ForegroundColor = [ConsoleColor]::DarkGreen
-
-# Turn off showing that the local branch is identical to the remote
-$GitPromptSettings.BranchIdenticalStatusSymbol.Text = ""
-
-# Change the default symbol that shows the local is ahead of remote
-$GitPromptSettings.BranchAheadStatusSymbol.Text = "☁"
-$GitPromptSettings.BranchIdenticalStatusSymbol.ForegroundColor = [ConsoleColor]::Magenta
-
 # Don't show statuses when they are zero
 $GitPromptSettings.ShowStatusWhenZero = $false
 
-# Change the default dirty symbol
-$GitPromptSettings.LocalWorkingStatusSymbol.Text = "☢"
 
 # **** PoshGit Prompt Settings End *****
 
