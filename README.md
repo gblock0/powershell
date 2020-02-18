@@ -26,3 +26,9 @@
   > - Undo/redo
   > - Automatic saving of history, including sharing history across live sessions
   > - "Menu" completion (somewhat like Intellisense, select completion with arrows) via Ctrl+Space
+
+## Usage
+
+1. Clone repo
+1. Add `. <pathToRepo>\powershellSettings.ps1` in your powershell
+1. Enjoy!
