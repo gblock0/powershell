@@ -30,5 +30,5 @@
 ## Usage
 
 1. Clone repo
-1. Add `. <pathToRepo>\powershellSettings.ps1` in your powershell
+1. Add `. <pathToRepo>\powershellSettings.ps1` in your powershell profile
 1. Enjoy!
