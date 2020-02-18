@@ -4,8 +4,7 @@
 
 - [Get-ChildItemColor](https://github.com/joonro/Get-ChildItemColor)
   - Makes `ls` in powershell behave more similar to unix `ls`
-- [oh-my-post](https://github.com/JanDeDobbeleer/oh-my-posh)
-- [PostGit v1.X](https://github.com/dahlbyk/posh-git)
+- [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
 
 ![Example Prompt](https://raw.githubusercontent.com/gblock0/powershell/master/screenshots/poshgitPrompt.png)
 
