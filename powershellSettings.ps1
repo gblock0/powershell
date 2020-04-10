@@ -53,3 +53,7 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 function gbpurge {
 	git checkout master; git remote update origin --prune; git branch -vv | Select-String -Pattern ": gone]" | % { $_.toString().Trim().Split(" ")[0]} | % {git branch -d $_}
 }
+
+function gd {
+	git diff
+}
