@@ -51,9 +51,22 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # Deletes any local branches that have been deleted from the remote repo
 function gbpurge {
-	git checkout master; git remote update origin --prune; git branch -vv | Select-String -Pattern ": gone]" | % { $_.toString().Trim().Split(" ")[0]} | % {git branch -d $_}
+	git checkout master; git remote update origin --prune; git branch -vv | Select-String -Pattern ": gone]" | % { $_.toString().Trim().Split(" ")[0] } | % { git branch -d $_ }
 }
 
 function gd {
 	git diff
+}
+function gs {
+	git status
+}
+
+function FindLockingProcess([string] $FileOrFolderPath) {
+	IF ((Test-Path -Path $FileOrFolderPath) -eq $false) { 
+		Write-Warning "File or directory does not exist."        
+	} 
+	Else { 
+		$LockingProcess = CMD /C "openfiles /query /fo table | find /I ""$FileOrFolderPath""" 
+		Write-Host $LockingProcess 
+	}
 }
