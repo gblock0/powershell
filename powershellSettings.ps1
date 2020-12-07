@@ -51,7 +51,7 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # Deletes any local branches that have been deleted from the remote repo
 function gbpurge {
-	git checkout master; git remote update origin --prune; git branch -vv | Select-String -Pattern ": gone]" | % { $_.toString().Trim().Split(" ")[0] } | % { git branch -d $_ }
+	git remote update origin --prune; git branch -vv | Select-String -Pattern ": gone]" | % { $_.toString().Trim().Split(" ")[0] } | % { git branch -d $_ }
 }
 
 function gd {
